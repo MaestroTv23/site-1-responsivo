@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
+/* estilo padrão global*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*configurção geral do documento*/
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*romoção de estilo de lista padrão*/
+li {
+    list-style: none;
+}
+
+/*remoção do sublinhado dos links*/
+a {
+    text-decoration: none;
+}
+
+/*estilo do cabeçalho*/
+.header {
+    border-bottom: 1px solid #E2E8F0;
+    background-color: #222;
+}
+
+/*estilo da barra de navegação*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1.5rem;
+}
+
+/*icones de barras para os dispositivos menores*/
+.barras {
+    display: none;
+}
+
+/*estilo das barras para dispositivos menores*/
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+}
+
+/*estilo do menu de negevação*/
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*estilo dos itens de navegação*/
+.nav-item {
+    margin-left: 5rem;
+}
+
+/*estilo dos links de nevegação*/
+.nav-link {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+/*efeito hover nos links*/
+.nav-link:hover {
+    color: #482ff7;
+}
+
+/*estilo do logo tipo*/
+.nav-logo {
+    font-size: 3rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+/*estilo do menu de navegação para dispositivos menores*/
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #222;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-link {
+        color: #fff;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .barras {
+        display: block;
+        cursor: pointer;
+    }
+
+    .barras.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .barras.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .barras.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+}
